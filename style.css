@@ -5,25 +5,102 @@ body {
 }
 
 
-.nube {
-    width: 50px; /* Ancho del elemento */
-    height: 50px; /* Altura del elemento */
-    background-color: blue; /* Color del elemento */
-    position: absolute; /* Posición absoluta para animar fácilmente */
-    animation: pasarPorLaMitad 8s linear infinite; /* Nombre de la animación, duración, tipo de animación y repetición */
+
+.nube img {
+    width: 445px;
+    height: 225px; 
+
 }
+
+.nube {
+    position: absolute;
+    right: 0; 
+    width: 250px;
+    height: 270px; 
+    animation: pasarPorLaMitad 5s linear;
+    z-index: 5;
+}
+.lluvia{
+    display: flex;
+    flex-direction: column;
+
+}
+.lluvia #img1{
+    width: 250px ;
+    height: 270px;
+    position: absolute;
+    left: 45%;
+    animation: rainfall 5s linear ;
+    animation-delay: 1.2s;
+    z-index: 1;
+    margin-top: -15%;
+}
+
+.lluvia #img2{
+    width: 150px ;
+    height: 170px;
+    position: absolute;
+    left: 45%;
+    animation: rainfall 5s linear ;
+    animation-delay: 1.4s;
+    z-index: 1;
+    margin-top: -15%;
+}
+
+#flor{
+    width: 250px;
+    height: 300px;
+    position: absolute;
+    left: -200px;
+
+    animation: rissesupflower 5s linear forwards;
+    animation-delay:5s;
+}
+
 
 @keyframes pasarPorLaMitad {
     0% {
-        left: 0; /* Empieza en el borde izquierdo */
+        right: -100px; /* Fuera del lado derecho de la pantalla */
     }
     25% {
-        left: calc(50% - 25px); /* Llega a la mitad de la pantalla */
+        right: calc(50% - 50px); /* En el centro de la pantalla */
     }
-    50% {
-        left: calc(50% - 25px); /* Se detiene en la mitad durante 2 segundos */
+    75% {
+        right: calc(50% - 50px); /* Se detiene en el centro */
     }
     100% {
-        left: 0; /* Regresa al borde izquierdo */
+        right: calc(100% - 100px); /* Vuelve al lado derecho de la pantalla */
+    }
+}
+
+@keyframes rainfall {
+    0% {
+        top: -15px; 
+        opacity: 0;
+    }
+    50% {
+        top: calc(50% - 10px); 
+    }
+    100% {
+        top: calc(100% - 20px); 
+    }
+}
+
+@keyframes rissesupflower {
+    0% {
+        bottom: 0;
+        opacity: 0;
+        left: 45%;
+        top: 60%;
+    }
+
+    50%{
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+        left: 45%;
+        top: 50%;
     }
 }
