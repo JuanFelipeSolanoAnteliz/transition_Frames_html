@@ -1,5 +1,29 @@
 body {
-    background-image: url('./storage/fondoanimation.png');
-    background-size: cover;
+    background-image: url('storage/fondoanimation.png');
+    background-size: cover; 
 
+}
+
+
+.nube {
+    width: 50px; /* Ancho del elemento */
+    height: 50px; /* Altura del elemento */
+    background-color: blue; /* Color del elemento */
+    position: absolute; /* Posición absoluta para animar fácilmente */
+    animation: pasarPorLaMitad 8s linear infinite; /* Nombre de la animación, duración, tipo de animación y repetición */
+}
+
+@keyframes pasarPorLaMitad {
+    0% {
+        left: 0; /* Empieza en el borde izquierdo */
+    }
+    25% {
+        left: calc(50% - 25px); /* Llega a la mitad de la pantalla */
+    }
+    50% {
+        left: calc(50% - 25px); /* Se detiene en la mitad durante 2 segundos */
+    }
+    100% {
+        left: 0; /* Regresa al borde izquierdo */
+    }
 }
